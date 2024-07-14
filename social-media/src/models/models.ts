@@ -47,3 +47,8 @@ export interface ModalContentProps {
   postId: string;
   closeModal: () => void;
 }
+export interface CommentCardProps {
+  data: Comment;
+  account: CurrentUser | null;
+  postId: string;
+}

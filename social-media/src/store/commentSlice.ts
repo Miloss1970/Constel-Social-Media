@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Comment } from "../models/models";
+import { RootState } from "./store";
 const commentSlice = createSlice({
   name: "comments",
   initialState: {
@@ -27,7 +28,7 @@ const commentSlice = createSlice({
     },
   },
 });
-export const getAllComments = (state: any) => {
+export const getAllComments = (state: RootState) => {
   return state.commentStore.comments;
 };
 
