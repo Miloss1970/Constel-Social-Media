@@ -31,3 +31,19 @@ export interface Comment {
   text: string;
   username: string;
 }
+
+export interface LikeButtonProps {
+  handleLikePost: (isLiked: boolean, postId: string) => void;
+  liked: boolean;
+  likes: number;
+  postId: string;
+}
+export interface PostCardProps {
+  data: Post;
+  account: CurrentUser | null;
+}
+
+export interface ModalContentProps {
+  postId: string;
+  closeModal: () => void;
+}
