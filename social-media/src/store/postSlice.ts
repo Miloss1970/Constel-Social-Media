@@ -66,7 +66,6 @@ const postSlice = createSlice({
   },
 });
 export const getAllPosts = (state: RootState) => {
-  console.log(state);
   return state.postStore.posts;
 };
 

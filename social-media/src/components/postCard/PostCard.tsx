@@ -6,13 +6,13 @@ import { useDispatch } from "react-redux";
 import { likePost, removePost, unLike } from "../../store/postSlice";
 import Modal from "../modal/Modal";
 import ModalContent from "../modalContent/ModalContent";
+import LikeButton from "../buttonLike/ButtonLike";
 import ButtonComment from "../buttonComment/ButtonComment";
 import UserInfo from "../userInfo/UserInfo";
 import toast from "react-hot-toast";
 import AudioPlayer from "../audioPlayer/AudioPlayer";
-import { callApi } from "../../service/service";
-import ButtonLike from "../buttonLike/ButtonLike";
 import { PostCardProps } from "../../models/models";
+import { callApi } from "../../service/service";
 
 const PostCard: React.FC<PostCardProps> = ({ data, account }) => {
   const [showModal, setShowModal] = useState(false);
@@ -82,7 +82,7 @@ const PostCard: React.FC<PostCardProps> = ({ data, account }) => {
       {data.audio && <AudioPlayer audio={data.audio} />}
       <p className="mt-2">{data.text}</p>
       <div className="flex gap-2 mt-4">
-        <ButtonLike
+        <LikeButton
           handleLikePost={handleLikePost}
           liked={data.liked}
           likes={data.likes}

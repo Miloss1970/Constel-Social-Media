@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { TiHome } from "react-icons/ti";
 import PostCard from "../../components/postCard/PostCard";
-import logo from "../../utils/images/logo.jpg";
 import UserDropDownMenu from "../../components/userDropDownMenu/UserDropDownMenu";
+import logo from "../../utills/images/logo.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPosts, storeAllPosts } from "../../store/postSlice";
 
@@ -19,7 +19,6 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     callApi({ method: "GET", url: "posts" }).then((res) => {
-      console.log(res);
       if (res.error)
         return (
           <div className="h-[100vh] flex justify-center items-center font-bold text-[40px] text-red-700">
