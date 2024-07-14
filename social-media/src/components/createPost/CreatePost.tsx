@@ -40,7 +40,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ picture }) => {
   };
 
   const handlePost = () => {
-    if (!postText.trim()) return toast.error("Post text cannot be empty!");
+    if (!postText.trim()) return toast.error("Input  cannot be empty!");
 
     const formData = new FormData();
 
